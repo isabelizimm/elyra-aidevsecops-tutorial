@@ -1,0 +1,63 @@
+== Setup initial environment
+
+=== 1. Fork this repo from GitHub into your account
+
+Check
+https://docs.github.com/en/github/getting-started-with-github/fork-a-repo[Fork
+a repo] from GitHub docs.
+
+In this tutorial we rely on
+https://github.com/aicoe-aiops/project-template[project-template], as
+described above, in order to have a common structures that can be easily
+used by data scientists and devops. Have a structure for the projects in
+general allows others to find all the bits required for the ML lifecycle
+and from the DevOps lifecycle.
+
+If you want to use this template for your AI project, go to
+https://github.com/aicoe-aiops/project-template[project-template] and
+select `use the template` from the button provided in template
+repositories.
+
+=== 2. Access JupyterHub and spawn the Elyra image
+
+==== Operate First access JupyterHub
+
+[arabic]
+. You can get access https://jupyter.org/hub[JupyterHub] on
+https://www.operate-first.cloud/[Operate First] using the following
+https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/[link]
+
+[arabic, start=2]
+. Select Elyra image called `ml-prague-workshop:latest` from the list of
+images.
+. Select `Large` for container size.
+. Insert the environment variables required using add button in
+JupyterLab UI:
+
+* `AWS_ACCESS_KEY_ID`
+* `AWS_SECRET_ACCESS_KEY`.
+* `OBJECT_STORAGE_ENDPOINT_URL`
+* `OBJECT_STORAGE_BUCKET_NAME`.
+
+=== 3. Clone your repo using Jupyterlab Git Extension
+
+Once your image is ready and you are in the Jupyterlab UI, you can use
+the Git extension provided to clone
+https://github.com/thoth-station/elyra-aidevsecops-tutorial.git[this
+repo].
+
+[arabic]
+. Click the Git extension button from Jupyterlab UI:
+
+[arabic, start=2]
+. Take HTTPS link of the GitHub repo you want to clone, for this
+tutorial use your forked one from this repo:
+
+[arabic, start=3]
+. Insert the link taken from your forked repo in the JupyterLab Git
+Extension:
+e.g. `https://github.com/thoth-station/elyra-aidevsecops-tutorial.git`
+
+* https://github.com/aicoe-aiops/project-template[project-template]
+* https://www.operate-first.cloud/[Operate First]
+* https://jupyter.org/hub[JupyterHub]

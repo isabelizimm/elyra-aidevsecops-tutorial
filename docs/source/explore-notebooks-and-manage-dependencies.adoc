@@ -1,0 +1,30 @@
+== Start working on your notebooks
+
+For the purpose of this tutorial, the notebooks have been created
+already.
+
+=== Manage dependencies for your new notebook
+
+Use https://github.com/thoth-station/jupyterlab-requirements[jupyterlab
+extension for dependency management]. For each notebook you can follow
+similar pattern, in this way you can guarantee all notebooks are in sync
+with their dependencies and you are using the correct kernel.
+
+The notebooks that will be used in an AI Pipeline are:
+
+[arabic]
+. https://github.com/thoth-station/elyra-aidevsecops-tutorial/blob/master/notebooks/download_dataset.ipynb[download_dataset.ipynb]
+-> Download MNIST dataset from Tensorflow (NOTE in
+https://github.com/elyra-ai/elyra[Elyra] a step in a pipeline can also
+be performed with a
+https://github.com/thoth-station/elyra-aidevsecops-tutorial/blob/master/src/data/download_dataset_from_tf.py[Python
+script];
+. https://github.com/thoth-station/elyra-aidevsecops-tutorial/blob/master/notebooks/training.ipynb[training.ipynb]
+Train the model for MNIST Classification and store it locally or in the
+Cloud Object Storage;
+
+=== References
+
+* https://github.com/thoth-station/jupyterlab-requirements[jupyterlab
+extension for dependency management]
+* https://github.com/elyra-ai/elyra[Elyra]

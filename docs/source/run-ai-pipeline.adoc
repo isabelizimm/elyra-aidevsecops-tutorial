@@ -1,0 +1,38 @@
+== Run AI Pipeline
+
+Using https://github.com/elyra-ai/elyra[Elyra] UI:
+
+[arabic]
+. Use play button to run the AI Pipeline.
+
+[arabic, start=2]
+. Before starting the pipeline you need to select which runtime
+environment to use and add a name for your pipeline.
+
+Run your pipeline and move to
+http://istio-ingressgateway-istio-system.apps.zero.massopen.cloud/pipeline/#/experiments[Kubeflow
+Pipeline UI] to see what is happening.
+
+For more examples on how to create an AI pipeline in Elyra, you can use
+this
+https://github.com/elyra-ai/examples/tree/master/pipelines/hello_world_kubeflow_pipelines[link].
+
+You can check the status of each step in the pipeline directly from the
+UI and debug from logs if any problems occur:
+
+The model is stored in your bucket, you can check from your terminal
+using
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html[aws
+CLI]:
+
+[source,bash]
+----
+  aws s3 --profile moc-pipeline-kfp --endpoint https://s3-openshift-storage.apps.zero.massopen.cloud/ ls s3://{your_bucket}/{your_project_name}/models/
+----
+
+where `moc-pipeline-kfp` is the aws profile containing
+`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to access your bucket.
+
+=== References
+
+* https://github.com/elyra-ai/elyra[Elyra]

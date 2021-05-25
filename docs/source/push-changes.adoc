@@ -1,0 +1,16 @@
+== Store your changes on your GitHub repo
+
+=== Push your changes to GitHub repo
+
+Whenever you finish working on your project or you need to stop, push
+your changes to GitHub, so that all your work can be saved. In order to
+do that:
+
+[arabic]
+. Go to Git Box panel on the left and select Push Changes.
+
+[arabic, start=2]
+. Insert your Github account name and your GitHub token to push to the
+GitHub repo you cloned.
+
+Then go to your repo and open a Pull Request.

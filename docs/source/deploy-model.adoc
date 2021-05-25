@@ -1,0 +1,19 @@
+== Deploy your model
+
+There are different ways to deploy a model and different tools that can
+be used for that (e.g. Seldon, Tf-Serving, TensorRT), but for this
+tutorial we created a simple Flask application that can be easily
+deployed.
+
+=== Flask application
+
+https://github.com/thoth-station/elyra-aidevsecops-tutorial/blob/master/docs/source/model-deployment/flask-application.md[Deploy
+Inference Application using Flask]
+
+=== KFServing
+
+WIP
+
+=== TensorRT
+
+WIP

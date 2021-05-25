@@ -1,0 +1,16 @@
+== Monitor your model and application with Prometheus and Grafana
+
+[arabic]
+. Open issue in https://www.operate-first.cloud/[Operate First]
+https://github.com/operate-first/support/issues[support] and request
+Prometheus scraping the model endpoint `/metrics` for the application
+deployed in your namespace.
+. Create new Grafana dashbord for the metrics to see how the application
+and model are performing and open issue in
+https://www.operate-first.cloud/[Operate First]
+https://github.com/operate-first/support/issues[support] on how to have
+your dashboard deployed.
+
+=== References
+
+* https://www.operate-first.cloud/[Operate First]
