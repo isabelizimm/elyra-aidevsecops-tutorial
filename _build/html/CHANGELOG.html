@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Release 0.1.0 (2021-01-26T08:49:31) &#8212; My sample book / Project Meteor</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book / Project Meteor</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="README.html">
+   Elyra AIDevSecOps Tutorial
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/training.html">
+   Training model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/test_deployed_model.html">
+   Test Deployed Model
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/CHANGELOG.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Release 0.1.0 (2021-01-26T08:49:31)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-2-0-2021-01-26t13-43-11">
+   Release 0.2.0 (2021-01-26T13:43:11)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-2-1-2021-01-26t17-38-06">
+   Release 0.2.1 (2021-01-26T17:38:06)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-2-2-2021-01-27t13-54-16">
+   Release 0.2.2 (2021-01-27T13:54:16)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-2-3-2021-02-01t14-50-58">
+   Release 0.2.3 (2021-02-01T14:50:58)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-3-0-2021-02-10t15-51-32">
+   Release 0.3.0 (2021-02-10T15:51:32)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-4-0-2021-02-15t14-56-19">
+   Release 0.4.0 (2021-02-15T14:56:19)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Features
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improvements">
+     Improvements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-5-0-2021-02-22t07-45-11">
+   Release 0.5.0 (2021-02-22T07:45:11)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Features
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Improvements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-6-0-2021-02-26t14-43-24">
+   Release 0.6.0 (2021-02-26T14:43:24)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Features
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Improvements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-7-0-2021-04-28t06-28-23">
+   Release 0.7.0 (2021-04-28T06:28:23)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Features
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Improvements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other">
+     Other
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-8-0-2021-05-06t08-33-29">
+   Release 0.8.0 (2021-05-06T08:33:29)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Features
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Improvements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-8-1-2021-06-24t14-37-34">
+   Release 0.8.1 (2021-06-24T14:37:34)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-9-0-2021-07-01t13-22-05">
+   Release 0.9.0 (2021-07-01T13:22:05)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#release-0-9-1-2021-07-03t17-33-02">
+   Release 0.9.1 (2021-07-03T17:33:02)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="release-0-1-0-2021-01-26t08-49-31">
+<h1>Release 0.1.0 (2021-01-26T08:49:31)<a class="headerlink" href="#release-0-1-0-2021-01-26t08-49-31" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Remove jupyter from dev package (#22)</p></li>
+<li><p>Fix context path overalys for deployment (#19)</p></li>
+<li><p>Adjust pre-commit (#21)</p></li>
+<li><p>Create flask app with endpoints to request prediction and metrics (#12)</p></li>
+<li><p>Add overlays (#18)</p></li>
+<li><p>Add manifests (#15)</p></li>
+<li><p>Update aicoe yaml (#16)</p></li>
+<li><p>Update thoth yaml (#13)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-2-0-2021-01-26t13-43-11">
+<h1>Release 0.2.0 (2021-01-26T13:43:11)<a class="headerlink" href="#release-0-2-0-2021-01-26t13-43-11" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Features<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use smart changelog (#33)</p></li>
+<li><p>Add flask exporter prometheus (#31)</p></li>
+<li><p>Adjust deploy in .aicoe.yaml for handling correctly the overlays context path (#29)</p></li>
+<li><p>Add gunicorn (#32)</p></li>
+<li><p>Add bot approvers for release (#27)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-2-1-2021-01-26t17-38-06">
+<h1>Release 0.2.1 (2021-01-26T17:38:06)<a class="headerlink" href="#release-0-2-1-2021-01-26t17-38-06" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Features<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Update <a class="reference external" href="http://wsgi.py">wsgi.py</a> (#40)</p></li>
+<li><p>Adjust context path for image tag update (#39)</p></li>
+<li><p>Add WIP (#37)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-2-2-2021-01-27t13-54-16">
+<h1>Release 0.2.2 (2021-01-27T13:54:16)<a class="headerlink" href="#release-0-2-2-2021-01-27t13-54-16" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>Features<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Update <a class="reference external" href="http://wsgi.py">wsgi.py</a> (#42)</p></li>
+<li><p>:ship: Deploy the Tag v0.2.1 for elyra-aidevsecops-tutorial</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-2-3-2021-02-01t14-50-58">
+<h1>Release 0.2.3 (2021-02-01T14:50:58)<a class="headerlink" href="#release-0-2-3-2021-02-01t14-50-58" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id4">
+<h2>Features<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fix broken link. (#51)</p></li>
+<li><p>:ship: Deploy the Tag v0.2.2 for elyra-aidevsecops-tutorial (#50)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-3-0-2021-02-10t15-51-32">
+<h1>Release 0.3.0 (2021-02-10T15:51:32)<a class="headerlink" href="#release-0-3-0-2021-02-10t15-51-32" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2>Features<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Include option to use Ceph for Kubeflow Pipeline on Tekton (#57)</p></li>
+<li><p>Update download dataset notebook (#54)</p></li>
+<li><p>:ship: Deploy the Tag v0.2.3 for elyra-aidevsecops-tutorial</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-4-0-2021-02-15t14-56-19">
+<h1>Release 0.4.0 (2021-02-15T14:56:19)<a class="headerlink" href="#release-0-4-0-2021-02-15t14-56-19" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id6">
+<h2>Features<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>update ci config to support build and delivery from overlay (#70)</p></li>
+<li><p>Restore overlay for training (#71)</p></li>
+<li><p>adjust-overlays (#69)</p></li>
+<li><p>Correct notebook link and add one image in docs (#67)</p></li>
+<li><p>Correct sentence (#66)</p></li>
+<li><p>Add screenshots on how to run the Elyra AI Pipeline (#65)</p></li>
+<li><p>Add image and step on how to start new pipeline editor in Elyra (#64)</p></li>
+<li><p>Correct name image (#62)</p></li>
+<li><p>Improve doc tutorial (#46)</p></li>
+<li><p>:ship: Deploy the Tag v0.3.0 for elyra-aidevsecops-tutorial</p></li>
+</ul>
+</div>
+<div class="section" id="improvements">
+<h2>Improvements<a class="headerlink" href="#improvements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Add notebook dependencies in notebooks and overlays matchin notebook kernels and dependencies using jupyterlab-requirements (#68)</p></li>
+<li><p>Add notebook to test deployed model (#61)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-5-0-2021-02-22t07-45-11">
+<h1>Release 0.5.0 (2021-02-22T07:45:11)<a class="headerlink" href="#release-0-5-0-2021-02-22t07-45-11" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id7">
+<h2>Features<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Update description of successfull pipeline (#88)</p></li>
+<li><p>Add store model ceph (#86)</p></li>
+<li><p>Add completed pipeline (#85)</p></li>
+<li><p>Connect once to S3 (#84)</p></li>
+<li><p>adjust-notebook (#83)</p></li>
+<li><p>Add missing package to overlay (#82)</p></li>
+<li><p>Optional loading of the model from Ceph (#79)</p></li>
+<li><p>Add latency to output of predicted model (#78)</p></li>
+<li><p>Add link to AICOE yaml for clarification (#77)</p></li>
+<li><p>Adjust image links (#76)</p></li>
+<li><p>Updated steps in the tutorial (#75)</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>Improvements<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Adjust test script and test notebook (#87)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-6-0-2021-02-26t14-43-24">
+<h1>Release 0.6.0 (2021-02-26T14:43:24)<a class="headerlink" href="#release-0-6-0-2021-02-26t14-43-24" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id9">
+<h2>Features<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Correct requirements (#114)</p></li>
+<li><p>Add missing references</p></li>
+<li><p>Update reference (#112)</p></li>
+<li><p>Refactor and correct errors (#111)</p></li>
+<li><p>Configure overlays directory (#109)</p></li>
+<li><p>Add links manifest (#108)</p></li>
+<li><p>Add Openshift example (#107)</p></li>
+<li><p>Final changes (#106)</p></li>
+<li><p>Describe where to find information for the bucket (#104)</p></li>
+<li><p>Add URL GitHub repo to be cloned (#103)</p></li>
+<li><p>Make pre-commit happy (#102)</p></li>
+<li><p>Add inputs for Kubeflow Pipeline inputs (#101)</p></li>
+<li><p>Improve Runtime images part (#100)</p></li>
+<li><p>Add Kebechet update image (#99)</p></li>
+<li><p>Add Tekton pipelines overlays builds images (#97)</p></li>
+<li><p>Change section order (#96)</p></li>
+<li><p>:ship: Deploy the Tag v0.5.0 for elyra-aidevsecops-tutorial</p></li>
+<li><p>Add description on how to Push changes to GitHub (#93)</p></li>
+<li><p>Update image for runtime images creation using command palette (#92)</p></li>
+<li><p>Update notebook dependencies (#91)</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>Improvements<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Describe Git Extenstion use (#105)</p></li>
+<li><p>Add ArgoCD image and description (#98)</p></li>
+<li><p>Add links to KFP and Tekton (#94)</p></li>
+<li><p>Adjust software stack not to use * (#95)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-7-0-2021-04-28t06-28-23">
+<h1>Release 0.7.0 (2021-04-28T06:28:23)<a class="headerlink" href="#release-0-7-0-2021-04-28t06-28-23" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id11">
+<h2>Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Make tutorial an exeriment to be spawned by JH on Operate First (#138)</p></li>
+<li><p>Delete CODEOWNERS</p></li>
+<li><p>Fix pipeline GitHub URL (#135)</p></li>
+<li><p>Add correct KFP URL to run pipeline (#128)</p></li>
+<li><p>Adjust KFP UI URL (#134)</p></li>
+<li><p>Add alternative to create runtime images and runtime through CLI</p></li>
+<li><p>Split cases for model deployment</p></li>
+<li><p>Separate personas</p></li>
+<li><p>update link for KFP</p></li>
+<li><p>Use correct Ceph URL</p></li>
+<li><p>Update ArgoCD URL</p></li>
+<li><p>make-pre-commit happy</p></li>
+<li><p>Reaplace cnv with zero</p></li>
+<li><p>Post workshop errors correction (#120)</p></li>
+<li><p>:sparkles: let’s run pre-commit</p></li>
+<li><p>Update .aicoe-ci.yaml</p></li>
+<li><p>Update OWNERS</p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>Improvements<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>use only overlays (#127)</p></li>
+</ul>
+</div>
+<div class="section" id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>remove unusued env variables</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-8-0-2021-05-06t08-33-29">
+<h1>Release 0.8.0 (2021-05-06T08:33:29)<a class="headerlink" href="#release-0-8-0-2021-05-06t08-33-29" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id13">
+<h2>Features<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Add missing references (#153)</p></li>
+<li><p>Add variable to store metrics (#152)</p></li>
+<li><p>Update the aicoe-ci config file with proper image (#151)</p></li>
+<li><p>add datasets for pipeline (#144)</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>Improvements<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Describe Integration test (#154)</p></li>
+<li><p>Use behave for gathering metrics and running integration test (#148)</p></li>
+<li><p>Download and test script (#146)</p></li>
+<li><p>Add test (#145)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-8-1-2021-06-24t14-37-34">
+<h1>Release 0.8.1 (2021-06-24T14:37:34)<a class="headerlink" href="#release-0-8-1-2021-06-24t14-37-34" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id15">
+<h2>Features<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>add dependencies for experiment (#171)</p></li>
+<li><p>:ship: Deploy the Tag v0.8.0 for elyra-aidevsecops-tutorial</p></li>
+<li><p>:ship: Deploy the Tag v0.7.0 for elyra-aidevsecops-tutorial</p></li>
+<li><p>:ship: Deploy the Tag v0.6.0 for elyra-aidevsecops-tutorial</p></li>
+<li><p>Update .aicoe-ci.yaml (#163)</p></li>
+<li><p>:arrow_down_small: set the resource requirements as per usage (#162)</p></li>
+<li><p>add more metrics (#157)</p></li>
+<li><p>:hatched_chick: update the prow resource limits (#159)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-9-0-2021-07-01t13-22-05">
+<h1>Release 0.9.0 (2021-07-01T13:22:05)<a class="headerlink" href="#release-0-9-0-2021-07-01t13-22-05" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id16">
+<h2>Features<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Updated Training Notebook (#167)</p></li>
+<li><p>:ship: Deploy the Tag v0.8.1 for elyra-aidevsecops-tutorial</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="release-0-9-1-2021-07-03t17-33-02">
+<h1>Release 0.9.1 (2021-07-03T17:33:02)<a class="headerlink" href="#release-0-9-1-2021-07-03t17-33-02" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id17">
+<h2>Features<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Add library</p></li>
+<li><p>:ship: Deploy the Tag v0.9.0 for elyra-aidevsecops-tutorial</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Me!<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
