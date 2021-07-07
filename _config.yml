@@ -1,1 +1,5 @@
 theme: jekyll-theme-hacker
+title: My sample book / Project Meteor
+author: Me!
+execute:
+  execute_notebooks: false
