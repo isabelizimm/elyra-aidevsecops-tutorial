@@ -1,0 +1,46 @@
+check:
+  - overlays-build
+overlays_dir: overlays
+overlays:
+  - name: download-dataset
+    build:
+      base-image: "quay.io/thoth-station/s2i-thoth-ubi8-py38:v0.28.0"
+      build-stratergy: Source
+      registry: quay.io
+      registry-org: thoth-station
+      registry-project: elyra-aidevsecops-dataset
+      registry-secret: thoth-station-thoth-pusher-secret
+
+  - name: training
+    build:
+      base-image: "quay.io/thoth-station/s2i-thoth-ubi8-py38:v0.28.0"
+      build-stratergy: Source
+      registry: quay.io
+      registry-org: thoth-station
+      registry-project: elyra-aidevsecops-training
+      registry-secret: thoth-station-thoth-pusher-secret
+
+  - name: experiment
+    build:
+      base-image: "quay.io/thoth-station/s2i-elyra-custom-notebook:latest"
+      build-source-script: "image:///opt/app-root/builder"
+      custom-tag: latest
+      build-stratergy: Source
+      registry: quay.io
+      registry-org: thoth-station
+      registry-project: elyra-aidevsecops-experiment
+      registry-secret: thoth-station-thoth-pusher-secret
+
+  - name: inference
+    build:
+      base-image: "quay.io/thoth-station/s2i-thoth-ubi8-py38:v0.28.0"
+      build-stratergy: Source
+      registry: quay.io
+      registry-org: thoth-station
+      registry-project: elyra-aidevsecops-tutorial
+      registry-secret: thoth-station-thoth-pusher-secret
+    deploy:
+      project-org: "thoth-station"
+      project-name: "elyra-aidevsecops-tutorial"
+      image-name: "elyra-aidevsecops-tutorial"
+      overlay-contextpath: "manifests/overlays/test/imagestreamtag.yaml"

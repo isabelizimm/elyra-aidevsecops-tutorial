@@ -1,0 +1,13 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+approvers:
+  - pacospace
+  - MichaelClifford
+  - sesheta
+  - sefkhet-abwy[bot]
+  - app/sefkhet-abwy
+  - sefkhet-abwy
+reviewers:
+  - isabelizimm
+  - oindrillac
+  - Shreyanand
