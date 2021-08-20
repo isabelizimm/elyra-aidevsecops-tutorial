@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deploy your model as a Flask application &#8212; Project Meteor</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Test your deployed inference application" href="../test-model.html" />
+    <link rel="prev" title="Deploy your model" href="../deploy-model.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Project Meteor</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../README.html">
+   Elyra AIDevSecOps Tutorial
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Behind the Scenes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pre-requisite.html">
+   Pre-requisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../setup-initial-environment.html">
+   Setup initial environment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../explore-notebooks-and-manage-dependencies.html">
+   Start working on your notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../push-changes.html">
+   Store your changes on your GitHub repo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../build-images.html">
+   Create a first release and image of your project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../use-bots.html">
+   Dependencies updates in the repo
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  AI Lifecycle
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../notebooks/download_dataset.html">
+   Download Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../notebooks/training.html">
+   Training model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../notebooks/test_deployed_model.html">
+   Test Deployed Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../create-ai-pipeline.html">
+   Create AI Pipeline (using Elyra UI)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../run-ai-pipeline.html">
+   How to run an AI Pipeline with Elyra
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  DevOps Lifecycle
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../deploy-model.html">
+   Deploy your model
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Deploy your model as a Flask application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../test-model.html">
+   Test your deployed inference application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../monitor-model.html">
+   Monitor your model and application with Prometheus and Grafana
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/docs/source/model-deployment/flask-application.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/AICoE/elyra-aidevsecops-tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/AICoE/elyra-aidevsecops-tutorial/issues/new?title=Issue%20on%20page%20%2Fdocs/source/model-deployment/flask-application.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-your-flask-app">
+   Create your Flask app
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-a-new-release">
+     1. Make a new release
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy-your-application">
+     2. Deploy your application
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#requirements">
+       <strong>
+        Requirements
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-operate-first-with-argocd">
+       <strong>
+        Using Operate First with ArgoCD
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#using-openshift-cli">
+       <strong>
+        Using OpenShift CLI
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="deploy-your-model-as-a-flask-application">
+<h1>Deploy your model as a Flask application<a class="headerlink" href="#deploy-your-model-as-a-flask-application" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-your-flask-app">
+<h2>Create your Flask app<a class="headerlink" href="#create-your-flask-app" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve trained your model and it’s stored on Ceph, you can start to work on an inference application to make your model accessible. In this tutorial, we will make a minimal <a class="reference external" href="https://flask.palletsprojects.com/en/2.0.x/">Flask application</a> that we can deploy on OpenShift to serve model inferences. We will also use <a class="reference external" href="https://argoproj.github.io/argo-cd/">ArgoCD</a> for continuous deployment of our application as we make changes.</p>
+<p>For the purpose of the tutorial you can reuse this <span class="xref myst">application script</span> created with Flask. This app exposes critical endpoints for serving and monitoring our model, such as <code class="docutils literal notranslate"><span class="pre">/predict</span></code> for generating model predictions from user provided inputs and <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> to measure usage and model performance.</p>
+<div class="section" id="make-a-new-release">
+<h3>1. Make a new release<a class="headerlink" href="#make-a-new-release" title="Permalink to this headline">¶</a></h3>
+<p>When you make any changes to your model, typically through retraining, and add a new one to Ceph, you will need to <a class="reference internal" href="../build-images.html"><span class="doc std std-doc">create a new release and build the image</span></a> again. This is because you have made new changes to the model that are not reflected in the current image. Once the new tag is created, the pipeline will automatically update the tag where ArgoCD is looking for changes, and your new image will be rebuilt to include your new model and will be seamlessly redeployed.</p>
+</div>
+<div class="section" id="deploy-your-application">
+<h3>2. Deploy your application<a class="headerlink" href="#deploy-your-application" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="requirements">
+<h4><strong>Requirements</strong><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Image Name: <code class="docutils literal notranslate"><span class="pre">quay.io/thoth-station/elyra-aidevsecops-tutorial:v0.5.0</span></code></p></li>
+<li><p><span class="xref myst">DeploymentConfig</span>: Deployment configs are templates for running applications on OpenShift. This will give the cluster the necessary information to deploy your Flask application.</p></li>
+<li><p><span class="xref myst">Service</span>: A service manifest allows for an application running on a set of OpenShift pods to be exposed as a network service.</p></li>
+<li><p><span class="xref myst">Route</span>: Routes are used to expose services. This route will give your model deployment a reachable hostname to interact with.</p></li>
+</ul>
+</div>
+<div class="section" id="using-operate-first-with-argocd">
+<h4><strong>Using Operate First with ArgoCD</strong><a class="headerlink" href="#using-operate-first-with-argocd" title="Permalink to this headline">¶</a></h4>
+<p>You can make a request to the Operate First team to use ArgoCD for your application.</p>
+<p>There are two steps you need to follow in order to have a new application deployed on <a class="reference external" href="https://www.operate-first.cloud/">Operate First</a>:</p>
+<ol class="simple">
+<li><p>Create all the manifests for your project (e.g. deployment, service, routes, workflows, pipelines) and place them in your repo under <code class="docutils literal notranslate"><span class="pre">/manifests</span></code>.</p></li>
+<li><p>Submit an issue to <a class="reference external" href="https://github.com/operate-first/support/issues/new?assignees=&amp;labels=onboarding&amp;template=onboarding_argocd.md&amp;title=">operate-first/support</a> to request deployment of your application.</p></li>
+</ol>
+<p>This way <a class="reference external" href="https://argoproj.github.io/argo-cd/">ArgoCD</a> will be used to maintain your application and keep it in sync with all of your current changes. Once you create a new release of your application (e.g. you change your model, you add a new metric, you add a new feature, etc.) and a new image is available, all you need to do is update the <a class="reference external" href="../../../manifests/overlays/test/imagestreamtag.yaml#L10">imagestreamtag</a> so that ArgoCD can deploy new version.</p>
+<p>Note: An <a class="reference external" href="https://github.com/AICoE/aicoe-ci">AICoE Pipeline</a> can also automatically update the <a class="reference external" href="../../../manifests/overlays/test/imagestreamtag.yaml#L10">imagestreamtag</a> once a new release is created.</p>
+<p>Once everything is synced to the cluster, you can monitor your application from the <a class="reference external" href="https://argoproj.github.io/argo-cd/">ArgoCD</a> UI using this <a class="reference external" href="https://argocd-server-argocd.apps.moc-infra.massopen.cloud/applications">link</a> as shown in the image below:</p>
+<div style="text-align:center">
+<img alt="Argo CD UI" src="https://raw.githubusercontent.com/thoth-station/elyra-aidevsecops-tutorial/master/docs/images/ArgoCDUI.png">
+</div>
+</div>
+<div class="section" id="using-openshift-cli">
+<h4><strong>Using OpenShift CLI</strong><a class="headerlink" href="#using-openshift-cli" title="Permalink to this headline">¶</a></h4>
+<p>Alternatively, you can also deploy your app manually to a cluster using the following OpenShift CLI commands.</p>
+<ol class="simple">
+<li><p>Open a terminal in Jupyterlab</p></li>
+<li><p>Login from the terminal: <code class="docutils literal notranslate"><span class="pre">oc</span> <span class="pre">login</span> <span class="pre">$CLUSTER_URL</span></code>.</p></li>
+<li><p>Insert your credentials <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">PASSWORD</span></code>.</p></li>
+<li><p>Make sure you are in <code class="docutils literal notranslate"><span class="pre">elyra-aidevsecops-tutorial</span></code> directory (you can run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command in the terminal to check your current path).</p></li>
+<li><p>Create the Service using: <code class="docutils literal notranslate"><span class="pre">oc</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">./manifests/base/service.yaml</span></code>.</p></li>
+<li><p>Create the Route using: <code class="docutils literal notranslate"><span class="pre">oc</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">./manifests/base/route.yaml</span></code>.</p></li>
+<li><p>Create the DeploymentConfig using: <code class="docutils literal notranslate"><span class="pre">oc</span> <span class="pre">apply</span> <span class="pre">-f</span> <span class="pre">./manifests/base/deploymentconfig.yaml</span></code>.</p></li>
+</ol>
+<p>Once your pods deploy your Flask app should be ready to serve inference requests from the exposed Route.</p>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../test-model.html"><span class="doc std std-doc">Test your deployed inference application</span></a></p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.operate-first.cloud/">Operate First</a></p></li>
+<li><p><a class="reference external" href="https://argoproj.github.io/argo-cd/">ArgoCD</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AICoE/aicoe-ci">AICoE Pipeline</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/source/model-deployment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../deploy-model.html" title="previous page">Deploy your model</a>
+    <a class='right-next' id="next-link" href="../test-model.html" title="next page">Test your deployed inference application</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shooting Star<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
